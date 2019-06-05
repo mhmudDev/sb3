@@ -1,30 +1,30 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "N";
-var adminprefix = 'N'
+var prefix = "*";
+var adminprefix = '*'
 
 
-const developers = ["403516759228809218","403516759228809218"]
+const developers = ["560183782804553728","560183782804553728"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
       
-  if (message.content.startsWith(adminprefix + 'pl')) {
+  if (message.content.startsWith(adminprefix + 'p')) {
     client.user.setGame(argresult);
       message.channel.send(`**✅   ${argresult}**`)
   } else 
      if (message.content === (adminprefix + "leave")) {
     message.guild.leave();        
   } else  
-  if (message.content.startsWith(adminprefix + 'wt')) {
+  if (message.content.startsWith(adminprefix + 'w')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
       message.channel.send(`**✅   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'ls')) {
+  if (message.content.startsWith(adminprefix + 'l')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
       message.channel.send(`**✅   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
+  if (message.content.startsWith(adminprefix + 's')) {
     client.user.setGame(argresult, "https://www.twitch.tv/dream");
       message.channel.send(`**✅**`)
   }
